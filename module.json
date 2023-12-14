@@ -7,7 +7,7 @@
     "verified": "11"
   },
   "esmoules": ["scripts/aru.js"],
-  "styles": ["aru.css"],
+  "styles": ["styles/aru.css"],
   "languages": [
     {
       "lang": "en",

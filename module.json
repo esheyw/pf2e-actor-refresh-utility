@@ -1,0 +1,38 @@
+{
+  "id": "pf2e-actor-refresh-utility",
+  "title": "PF2e Actor Refresh Utility",
+  "version": "0.1",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "esmoules": ["scripts/aru.js"],
+  "styles": ["aru.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "system": ["pf2e"],
+  "license": "LICENSE.txt",
+  "relationships": {
+    "systems": [{
+      "id":"pf2e",
+      "type":"system",
+      "manifest": "https://github.com/foundryvtt/pf2e/releases/latest/download/system.json",
+      "compatibility": {
+        "minimum":"5.11"
+      }
+    }]
+  },
+  "authors": [
+    {
+      "name": "Emmanuel Wineberg",
+      "discord": "esheyw",
+      "email": "esheyw@gmail.com",
+      "flags": {}
+    }
+  ]
+}

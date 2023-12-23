@@ -57,7 +57,8 @@ const REFRESH_OPTIONS = {
     feat: false,
     spell: true,
     dance: false,
-  },party: {
+  },
+  party: {
     ancestry: false,
     background: false,
     heritage: false,
@@ -90,8 +91,6 @@ const REFRESH_OPTIONS = {
     spell: false,
     dance: false,
   },
-  
-  
   vehicle: {
     ancestry: false,
     background: false,

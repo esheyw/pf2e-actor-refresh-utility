@@ -6,7 +6,7 @@
     "minimum": "11",
     "verified": "11"
   },
-  "esmoules": ["scripts/aru.js"],
+  "esmodules": ["scripts/init.js"],
   "styles": ["styles/aru.css"],
   "languages": [
     {
@@ -35,6 +35,12 @@
       "flags": {}
     }
   ],
+  "flags": {
+    "hotReload": {
+      "extensions": ["js", "css", "html", "hbs", "json"],
+      "paths": ["scripts", "lang/en.json", "styles/aru.css", "templates"]
+    }
+  },
   "readme":"https://github.com/esheyw/pf2e-actor-refresh-utility/blob/main/README.md",
   "bugs":"https://github.com/esheyw/pf2e-actor-refresh-utility/issues",
   "changelog": "https://github.com/esheyw/pf2e-actor-refresh-utility/blob/main/CHANGELOG.md"

@@ -1,0 +1,84 @@
+
+<fieldset>
+  <legend><h2>Selected Actors by Type</h2></legend>
+  <div class="actor-display-container">
+    {{#each actorsByType as |actors type|}}
+      <details class="actor-type-container">
+        <summary><h3>{{localize (lookup @root.labels type)}}<span class="actors-count">{{actors.length}}</span></h3></summary>
+        <div class="actors-grid">
+          {{#each actors}}
+          <div class="actor-cell" data-tooltip="{{name}}" data-actor="{{uuid}}"><img src="{{img}}" /><span>{{name}}</span></div>
+          {{/each}}
+        </div>
+      </details>
+    {{/each}}
+  </div>
+</fieldset>
+<form name="refreshOptions">
+  <fieldset><legend><h2>Refresh Options</h2></legend>
+    <table>
+      <thead>
+        <tr>
+          <th>{{localize "DOCUMENT.Actor"}} {{localize "Type"}}</th>
+          {{!-- character has all refresh options --}}
+          {{#each refreshOptions.character}}        
+          <th data-refresh-option="{{@key}}">{{localize (lookup @root.labels @key)}}</th>
+          {{/each}}
+        </tr>
+      </thead>
+      <tbody>
+        {{#each refreshOptions as |options type|}}
+        {{#if (lookup @root.actorsByType type)}}
+        <tr>
+          <td class="actortype-cell" data-actor-type="{{type}}">{{localize (lookup @root.labels type)}}</td>
+          {{#each options as |allowed option|}}
+            <td class="checkbox-cell"><input type="checkbox" name="{{type}}-{{option}}" data-actor-type="{{type}}" data-refresh-option="{{option}}" {{#unless allowed}} disabled{{/unless}}/></td>
+          {{/each}}
+        </tr>
+        {{/if}}
+        {{/each}}
+      </tbody>
+    </table>
+  </fieldset>
+</form>
+<form name="otherOptions">  
+  <div class="other-options-container">
+    <fieldset>
+      <legend><h2>{{localize "ARU.RefreshOptionsDialog.OtherOptions"}}</h2></legend>
+      <details class="backup-container">
+        <summary><h3>{{localize "ARU.RefreshOptionsDialog.BackupQuestion"}}<input type="checkbox" name="backup" /></h3></summary>
+        <div class="flexrow">
+          <label for="backupCollection">{{localize "ARU.RefreshOptionsDialog.BackupCollectionSelectLabel"}}</label>
+          <div class="form-fields">
+            <select name="backupCollection">
+              <option value="world">{{localize "SIDEBAR.DirectoryTitle" type=(localize "DOCUMENT.Actors")}}</option>
+              {{selectOptions actorPacks}}
+            </select>
+          </div>
+        </div>
+        <div class="flexrow">
+          <label for="backupFolder">{{localize "ARU.RefreshOptionsDialog.BackupFolderSelectLabel"}}</label>
+          <div class="form-fields">
+            <select name="backupFolder">
+              <option value=""></option>
+              {{> folderStructureOptions folders=actorPackFolders}}
+            </select>
+          </div>
+        </div>        
+      </details>
+      <details class="force-conatiner">
+        <summary><h3>{{localize "ARU.RefreshOptionsDialog.ForceQuestion"}}<input type="checkbox" name="force" /></h3></summary>
+        <div class="flexrow">
+          <label for="failoverBehavior">{{localize "ARU.RefreshOptionsDialog.FailoverBehaviorLabel"}}</label>
+          <div class="form-fields">
+            <select name="failoverBehavior">
+              <option value="pass">{{localize "CARDS.Pass"}}</option>
+              <option value="delete">{{localize "Delete"}}</option>
+            </select>
+          </div>
+        </div>      
+      </details>
+    </fieldset>
+  </div>
+</form>
+<br />

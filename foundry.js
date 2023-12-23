@@ -1,0 +1,1 @@
+../../../../../../Foundry/v11s/resources/app/public/scripts/foundry.js

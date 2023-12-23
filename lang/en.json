@@ -1,0 +1,30 @@
+{
+  "ARU": {    
+    "RefreshOptionsDialog": {
+      "Title": "Actor Refresh Utility",
+      "ForceQuestion": "Attempt to auto-update Granters and things with ChoiceSets?",
+      "BackupQuestion": "Create backup(s) of the selected actor(s) before continuing?",
+      "OtherOptions": "Other Options",
+      "RefreshTypes": "Item Types to Refresh",
+      "Dance": "Dance",
+      "BackupCollectionSelectLabel": "Collection to create backup in: ",
+      "BackupFolderSelectLabel": "Folder within collection to create backup in: ",
+      "FailoverBehaviorLabel": "Failover behavior if force refresh fails: "
+    },
+    "InvertSelection": "Invert Selection",
+    "Error": {
+      "GMOnly": "The Actor Refresh Utility can only be run by GMs",
+      "InvalidPack": "Provided packID {packID} not valid in this world.",
+      "DocumentNotActor": "Provided Document \"{name}\" is of class \"{class}\", not an Actor.",
+      "NotAnActor": "Provided 'actor' was non-Document nonsense.",
+      "InvalidActorType": "Provided actor \"{name}\" is of type \"{type}\" which is not in the list of allowed types.",
+      "NoActorsProvided": "This Actor Refresh Utility has not been initialized with any actors."
+    },
+    "Success": {
+      "ActorsCount": "{count} Actors successfully refreshed!"
+    },
+    "Warning": {
+      "ActorsCount": "{count} Actors errored while attempting to refresh."
+    }
+  }
+}

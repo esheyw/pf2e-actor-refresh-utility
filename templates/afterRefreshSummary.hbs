@@ -1,0 +1,46 @@
+ {{#unless unrefreshedCount}} 
+  <h2>All Selected Items Refreshed!</h2>  
+  {{actor.name}}'s items of the selected types are now up to date to the best of this tool's ability.
+{{else}}
+  <h2>Unrefreshed Items</h2>
+  <table>
+    {{#each unrefreshedGroups as |group|}}
+    {{#if (gt items.length 0)}}
+      <tr>
+        <th colspan="3"><h2>{{#with (lookup ../labels [label])}}{{localize .}}{{/with}}</h2></th>
+      </tr>
+      <tr>
+        <th>Link</th>
+        <th>Reason Skipped</th>
+        <th>Additional Notes</th>
+      </tr>
+      {{#each items as |item|}}
+      <tr>
+        <td>@UUID[{{item.uuid}}]</td>
+        <td>{{item.reason}}</td>
+        <td>{{item.notes}}</td>
+      </tr>
+      {{/each}}
+    {{/if}}  
+    {{/each}}
+  </table>
+{{/unless}}
+<details>
+  <summary>Refreshed Items</summary>
+  <table>
+  {{#each refreshedGroups as |group|}}
+  {{#if (gt rows.0.length 0)}}
+    <tr>
+      <th colspan="3">{{#with (lookup ../labels [label])}}{{localize .}}{{/with}}</th>
+    </tr>
+    {{#each rows as |row|}}
+    <tr>
+      <td>@UUID[{{row.0.uuid}}]</td>
+      <td>{{#if (in row 1)}}@UUID[{{row.1.uuid}}]{{/if}}</td>
+      <td>{{#if (in row 2)}}@UUID[{{row.2.uuid}}]{{/if}}</td>
+    </tr>
+    {{/each}}
+  {{/if}}  
+  {{/each}}
+  </table>
+</details>

@@ -1,0 +1,37 @@
+<h2>{{localize "PLAYERS.CharSelected"}}:</h2>
+<div class="actor-container">
+  <img src="{{tokenImage}}" />
+  <span>{{actor.name}}</span>
+</div>
+<form>
+  <div class="form-group">    
+    <fieldset id="refresh-types">
+      <legend>{{localize "ARU.RefreshOptionsDialog.RefreshItems"}}</legend>
+      <div class="flexrow">
+        <button type="button" id="select-all">{{localize "SelectAll"}}</button>
+        <button type="button" id="invert">{{localize "ARU.InvertSelection"}}</button>    
+      </div>
+    {{#each options as |option|}}    
+      <div class="flexrow{{#unless (includes option.allowedActorTypes ../actor.type)}} hidden-div{{/unless}}">
+        <label for="{{option.value}}">{{#with (lookup ../labels [value])}}{{localize .}}{{/with}}</label>
+        <div class="form-fields">
+          <input type="checkbox" name="{{option.value}}" id="{{option.value}}" {{checked option.checked}}/>
+        </div>
+      </div>
+    {{/each}}
+    </fieldset>
+  </div>  
+  <div class="form-group"> 
+    <fieldset id="other-options">
+      <legend>{{localize "ARU.RefreshOptionsDialog.OtherOptions"}}</legend>   
+      <div class="flexrow">
+        <label for="optforce">{{localize "ARU.RefreshOptionsDialog.ForceQuestion"}}</label>
+        <input type="checkbox" name="optforce" id="optforce" />
+      </div>
+      <div class="flexrow">
+        <label for="optbackup">{{localize "ARU.RefreshOptionsDialog.BackupQuestion"}}</label>
+        <input type="checkbox" name="optbackup" id="optbackup" />
+      </div>  
+    </fieldset>
+  </div>
+</form>

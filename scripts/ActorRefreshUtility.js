@@ -87,6 +87,14 @@ export class ActorRefreshUtility {
     this._unrefreshed = {};
     this._refreshed = {};
   }
+
+  async selectActors() {
+    const renderCallback = (html) => {
+
+    };
+    
+  }
+
   async newROD() {
     const renderCallback = (html) => {
       //each actor cell opens the sheet associated with that actor
@@ -144,14 +152,6 @@ export class ActorRefreshUtility {
           details.open = ev.target.checked;
         });
       }
-      // const backupCheckbox = html.querySelector("input[name=backup]");
-      // const backupDetails = html.querySelector(".backup-container");
-      // backupCheckbox.addEventListener("change", (ev) => {
-      //   backupDetails.open = ev.target.checked;
-      // });
-      // backupDetails.addEventListener("toggle", (ev) => {
-      //   backupCheckbox.checked = ev.target.open;
-      // });
       //update the folder options when collection selected changes
       const backupFolderSelect = html.querySelector("select[name=backupFolder]");
       const backupCollectionSelect = html.querySelector("select[name=backupCollection]");

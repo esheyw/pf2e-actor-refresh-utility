@@ -9,7 +9,8 @@
       "Dance": "Dance",
       "BackupCollectionSelectLabel": "Collection to create backup in: ",
       "BackupFolderSelectLabel": "Folder within collection to create backup in: ",
-      "FailoverBehaviorLabel": "Failover behavior if force refresh fails: "
+      "FailoverBehaviorLabel": "Failover behavior if force refresh fails: ",
+      "ExclusionQuestion":"Allow for the exclusion of certain items from the refresh process?"
     },
     "InvertSelection": "Invert Selection",
     "Error": {

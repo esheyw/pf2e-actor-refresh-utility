@@ -16,7 +16,7 @@
     }
   ],
   "system": ["pf2e"],
-  "license": "LICENSE.txt",
+  "license": "LICENSE",
   "relationships": {
     "systems": [{
       "id":"pf2e",
@@ -37,8 +37,8 @@
   ],
   "flags": {
     "hotReload": {
-      "extensions": ["js", "css", "html", "hbs", "json"],
-      "paths": ["scripts", "lang/en.json", "styles/aru.css", "templates"]
+      "extensions": ["css", "hbs", "json"],
+      "paths": ["lang", "styles", "templates"]
     }
   },
   "readme":"https://github.com/esheyw/pf2e-actor-refresh-utility/blob/main/README.md",
